@@ -8,7 +8,7 @@
             Console.WriteLine("1 - Ataque Leve  (5-10 dano, 100% acerto)");
             Console.WriteLine("2 - Ataque Médio (10-20 dano, 80% acerto)");
             Console.WriteLine("3 - Ataque Forte (20-30 dano, 50% acerto)");
-            Console.WriteLine("4 - Defender     (Reduz dano pela metade)");
+            Console.WriteLine("4 - Defender (Reduz dano pela metade)");
             Console.WriteLine($"5 - Usar Poção  (Restaura 20 de vida, {pocoes} restantes)");
         }
 
@@ -25,8 +25,8 @@
 
             while (jogador.EstaVivo() && inimigo.EstaVivo())
             {
-                Console.WriteLine($"\n❤️  {jogador.Nome}: {jogador.Vida} | 👹 {inimigo.Nome}: {inimigo.Vida}");
-                Console.WriteLine($"🧪 Poções: {jogador.Pocoes}");
+                Console.WriteLine($"\n{jogador.Nome}: {jogador.Vida} | {inimigo.Nome}: {inimigo.Vida}");
+                Console.WriteLine($"Poções: {jogador.Pocoes}");
 
                 ExibirMenu(jogador.Pocoes);
 
@@ -37,7 +37,7 @@
                 }
                 catch
                 {
-                    Console.WriteLine("⚠️ Entrada inválida!");
+                    Console.WriteLine("Entrada inválida!");
                     continue;
                 }
 
@@ -50,20 +50,20 @@
                     case 3:
                         int dano = jogador.Atacar(escolha, random);
                         inimigo.Vida -= dano;
-                        Console.WriteLine($"⚔️  Você causou {dano} de dano!");
+                        Console.WriteLine($"Você causou {dano} de dano!");
                         break;
                     case 4:
                         jogador.Defendendo = true;
-                        Console.WriteLine("🛡️  Você se defendeu!");
+                        Console.WriteLine("Você se defendeu!");
                         break;
                     case 5:
                         if (jogador.UsarPocao())
-                            Console.WriteLine("🧪 Você usou uma poção! +20 de vida.");
+                            Console.WriteLine("Você usou uma poção! +20 de vida.");
                         else
-                            Console.WriteLine("⚠️ Sem poções!");
+                            Console.WriteLine("Sem poções!");
                         break;
                     default:
-                        Console.WriteLine("⚠️ Opção inválida!");
+                        Console.WriteLine("Opção inválida!");
                         continue;
                 }
 
@@ -73,21 +73,21 @@
 
                     if (danoInimigo == -1) 
                     {
-                        Console.WriteLine("⚔️ Rodada anulada!");
+                        Console.WriteLine("Rodada anulada!");
                     }
                     else
                     {
                         if (jogador.Defendendo) danoInimigo /= 2;
                         jogador.Vida -= danoInimigo;
-                        Console.WriteLine($"💢 {inimigo.Nome} causou {danoInimigo} de dano!");
+                        Console.WriteLine($"{inimigo.Nome} causou {danoInimigo} de dano!");
                     }
                 }
             }
 
             if (jogador.EstaVivo())
-                Console.WriteLine($"\n🏆 Você venceu!");
+                Console.WriteLine($"\nVocê venceu!");
             else
-                Console.WriteLine($"\n💀 Você foi derrotado!");
+                Console.WriteLine($"\nVocê foi derrotado!");
         }
     }
 }
