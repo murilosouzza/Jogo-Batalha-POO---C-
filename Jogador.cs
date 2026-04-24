@@ -37,7 +37,7 @@ namespace Jogo_Batalha_POO
                         return random.Next(10, 21);
                     else
                     {
-                        Console.WriteLine("❌ Ataque Médio errou!");
+                        Console.WriteLine("Ataque Médio errou!");
                         return 0;
                     }
                 case 3:
@@ -45,7 +45,7 @@ namespace Jogo_Batalha_POO
                         return random.Next(20, 31);
                     else
                     {
-                        Console.WriteLine("❌ Ataque Forte errou!");
+                        Console.WriteLine("Ataque Forte errou!");
                         return 0;
                     }
                 default:
