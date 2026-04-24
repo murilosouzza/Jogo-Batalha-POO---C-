@@ -16,28 +16,28 @@ namespace Jogo_Batalha_POO
             switch (acao)
             {
                 case 1:
-                    Console.WriteLine($"👹 {Nome} usou Ataque Leve!");
+                    Console.WriteLine($"{Nome} usou Ataque Leve!");
                     return random.Next(5, 11);
                 case 2:
-                    Console.WriteLine($"👹 {Nome} usou Ataque Médio!");
+                    Console.WriteLine($"{Nome} usou Ataque Médio!");
                     if (random.Next(1, 101) <= 80)
                         return random.Next(10, 21);
                     else
                     {
-                        Console.WriteLine($"👹 {Nome} errou!");
+                        Console.WriteLine($"{Nome} errou!");
                         return 0;
                     }
                 case 3:
-                    Console.WriteLine($"👹 {Nome} usou Ataque Forte!");
+                    Console.WriteLine($"{Nome} usou Ataque Forte!");
                     if (random.Next(1, 101) <= 50)
                         return random.Next(20, 31);
                     else
                     {
-                        Console.WriteLine($"👹 {Nome} errou!");
+                        Console.WriteLine($"{Nome} errou!");
                         return 0;
                     }
                 case 4:
-                    Console.WriteLine($"🛡️ {Nome} se defendeu! Rodada anulada.");
+                    Console.WriteLine($"{Nome} se defendeu! Rodada anulada.");
                     return -1;
                 default:
                     return 0;
