@@ -12,7 +12,7 @@ namespace Jogo_Batalha_POO
 
         public override int Atacar(Random random)
         {
-            int acao = random.Next(1, 5); // 👈 agora sorteia 1, 2, 3 ou 4
+            int acao = random.Next(1, 5); 
             switch (acao)
             {
                 case 1:
